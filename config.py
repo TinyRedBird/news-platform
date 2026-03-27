@@ -34,7 +34,7 @@ class TestConfig(Config):
     pass
 
 #提供一个统一的访问入口
-config={
+config_dict={
     'develop':DevelopConfig,
     'product':ProductConfig,
     'test':TestConfig
