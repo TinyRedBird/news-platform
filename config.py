@@ -33,7 +33,7 @@ class ProductConfig(Config):
 class TestConfig(Config):
     pass
 
-#提供一个同一的访问入口
+#提供一个统一的访问入口
 config={
     'develop':DevelopConfig,
     'product':ProductConfig,
