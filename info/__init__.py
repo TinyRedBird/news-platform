@@ -5,6 +5,8 @@ from flask_sqlalchemy import SQLAlchemy
 from redis import StrictRedis
 from flask_session import Session
 from flask_wtf.csrf import CSRFProtect
+from info.modules.index import index_blue
+
 
 def create_app(config_name):
     app = Flask(__name__)
@@ -25,4 +27,6 @@ def create_app(config_name):
     #使用CSRFProtest保护app
     CSRFProtect(app)
 
+    #将首页index_blue蓝图注册到app中
+    app.register_blueprint(index_blue)
     return app
