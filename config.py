@@ -8,7 +8,7 @@ class Config(object):
     SECRET_KEY = '1jn242HB1HJ8BHJVhn55hj'
 
     #数据库配置信息
-    SQLALCHEMY_DATABASE_URI="mysql+pymysql://root:123456@localhost:3306/info36"
+    SQLALCHEMY_DATABASE_URI="mysql+pymysql://root:123456@localhost:3306/news"
     SQLALCHEMY_TRACK_MODIFICATIONS=False
 
     #Redis配置信息
