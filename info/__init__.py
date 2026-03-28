@@ -1,3 +1,5 @@
+import logging
+from logging.handlers import RotatingFileHandler
 
 from config import config_dict
 from flask import Flask
@@ -10,6 +12,9 @@ from flask_wtf.csrf import CSRFProtect
 redis_store=None
 
 def create_app(config_name):
+    #调用日志，记录软件运行信息
+    log_file()
+
     app = Flask(__name__)
 
     #根据传入配置类的名字，去除对应的配置类信息
@@ -33,3 +38,15 @@ def create_app(config_name):
     from info.modules.index import index_blue
     app.register_blueprint(index_blue)
     return app
+
+def log_file():
+    #设置日志的记录等级
+    logging.basicConfig(level=logging.DEBUG)
+
+    file_log_handler=RotatingFileHandler('./logs/log', maxBytes=1024 * 50, backupCount=10)
+
+    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(name)s - %(filename)s:%(lineno)d - %(message)s')
+
+    file_log_handler.setFormatter(formatter)
+
+    logging.getLogger().addHandler(file_log_handler)
