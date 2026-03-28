@@ -12,14 +12,16 @@ from flask_wtf.csrf import CSRFProtect
 redis_store=None
 
 def create_app(config_name):
-    #调用日志，记录软件运行信息
-    log_file()
 
     app = Flask(__name__)
 
     #根据传入配置类的名字，去除对应的配置类信息
     config = config_dict.get(config_name)
+
     app.config.from_object(config)
+
+    #调用日志，记录软件运行信息
+    log_file(config.LEVE_NAME)
 
     #创建SQLAlchemy对象关联app
     db=SQLAlchemy(app)
@@ -39,9 +41,9 @@ def create_app(config_name):
     app.register_blueprint(index_blue)
     return app
 
-def log_file():
+def log_file(LEVE_NAME):
     #设置日志的记录等级
-    logging.basicConfig(level=logging.DEBUG)
+    logging.basicConfig(level=LEVE_NAME)
 
     file_log_handler=RotatingFileHandler('./logs/log', maxBytes=1024 * 50, backupCount=10)
 
