@@ -10,6 +10,7 @@ from flask_wtf.csrf import CSRFProtect
 
 #定义全局变量
 redis_store=None
+db = SQLAlchemy()
 
 def create_app(config_name):
 
@@ -24,7 +25,7 @@ def create_app(config_name):
     log_file(config.LEVE_NAME)
 
     #创建SQLAlchemy对象关联app
-    db=SQLAlchemy(app)
+    db.init_app(app)
 
     #创建redis对象
     global redis_store

@@ -1,0 +1,15 @@
+# 测试框架
+pytest==7.4.3
+pytest-cov==4.1.0
+pytest-xdist==3.5.0
+pytest-mock==3.12.0
+
+# Allure 报告
+allure-pytest==2.13.5
+
+# 代码质量
+flake8==6.1.0
+
+# 测试工具
+faker==20.1.0
+deepdiff==6.7.1
