@@ -1,3 +1,14 @@
+# IDE
 .idea/
+
+# Byte-compiled
 .py[cdo]
+__pycache__/
+
+
 logs/log*
+# Unit test
+pytest_cache/
+
+venv/
+env/
