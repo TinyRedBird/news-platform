@@ -1,3 +1,82 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+ul,
+ol,
+p,
+h1,
+h2,
+h3,
+h4,
+h4,
+h6,
+dl,
+dd,
+select,
+input,
+form {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease,
+        box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+em {
+    font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h4,
+h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: '';
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
 /*  去掉标签默认的间距   */
 body,ul,ol,p,h1,h2,h3,h4,h4,h6,dl,dd,select,input,form{
 	margin:0;
@@ -36,7 +115,6 @@ img{
 	zoom:1;
 }
 
-
 .fl{
 	float:left;
 }
@@ -44,11 +122,3 @@ img{
 .fr{
 	float:right;
 }
-
-
-
-
-
-
-
-
