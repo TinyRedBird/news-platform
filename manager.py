@@ -4,7 +4,7 @@
 redis配置
 session配置
 """
-from info import create_app, db, models
+from info import create_app, db
 from flask_migrate import Migrate
 
 app=create_app('develop')

@@ -218,26 +218,22 @@ function logout() {
 }
 
 
-var imageCodeId = ""
-var preimageCodeId = ""
+let currentImageCodeId = null; // 保存当前验证码 ID，用于提交验证
 
-// TODO 生成一个图片验证码的编号，并设置页面中图片验证码img标签的src属性
 function generateImageCode() {
+    const newId = generateUUID();
+    let url = '/passport/image_code?cur_id=' + newId;
+    if (currentImageCodeId) url += '&pre_id=' + currentImageCodeId;
 
-    /*
-    //1.生成一个随机字符串
-    imageCodeId = generateUUID();
+    const $img = $('.get_pic_code');
+    $img.attr('src', url);
+    $img.on('error', () => {
+        $img.attr('src', '/static/images/captcha_error.png');
+    });
 
-    //2.拼接图片url地址
-    image_url = '/passport/image_code?cur_id='+imageCodeId + "&pre_id="+preimageCodeId
-
-    //3.将地址设置到image标签的src属性中,为image_url
-    $('.get_pic_code').attr('src',image_url)
-
-    //4.记录上一次的编号
-    preimageCodeId = imageCodeId
-    */
+    currentImageCodeId = newId; // 更新为当前 ID
 }
+
 
 // 发送短信验证码
 function sendSMSCode() {

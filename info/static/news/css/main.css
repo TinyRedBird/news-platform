@@ -435,7 +435,7 @@ body {
     top: 24px;
     width: 20px;
     height: 20px;
-    background: url(../images/shutoff.png) center/contain no-repeat;
+    background: center/contain no-repeat;
     opacity: 0.6;
     transition: opacity 0.2s;
 }

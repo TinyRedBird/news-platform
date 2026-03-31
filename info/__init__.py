@@ -8,6 +8,7 @@ from redis import StrictRedis
 from flask_session import Session
 from flask_wtf.csrf import CSRFProtect
 
+
 #定义全局变量
 redis_store=None
 db = SQLAlchemy()
@@ -40,6 +41,12 @@ def create_app(config_name):
     #将首页index_blue蓝图注册到app中
     from info.modules.index import index_blue
     app.register_blueprint(index_blue)
+
+    #将认证蓝图passport_blue函数导入app中
+
+    from info.modules.passport import passport_blue
+    app.register_blueprint(passport_blue)
+
     return app
 
 def log_file(LEVE_NAME):

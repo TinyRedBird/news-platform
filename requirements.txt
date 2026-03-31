@@ -4,3 +4,10 @@ Werkzeug~=3.1.6
 redis~=7.4.0
 Flask-Migrate~=4.1.0
 alembic~=1.18.4
+pillow
+flask-sqlalchemy
+flask-wtf
+make-response
+alibabacloud-dypnsapi20170525
+alibabacloud-tea-util
+alibabacloud-tea-openapi
