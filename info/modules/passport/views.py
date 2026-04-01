@@ -43,7 +43,7 @@ def sms_code():
         if not redis_image_code_bytes:
             return jsonify(errno=RET.DATAEXIST, errmsg=u'图片验证码已过期，请刷新重试')
 
-        # 6比较验证码
+        # 比较验证码
         if not redis_image_code_bytes or redis_image_code_bytes.lower() != image_code.lower():
             return jsonify(errno=RET.DATAERR, errmsg=error_map[RET.DATAERR])
 
