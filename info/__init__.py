@@ -36,7 +36,7 @@ def create_app(config_name):
     Session(app)
 
     #使用CSRFProtest保护app
-    CSRFProtect(app)
+    # CSRFProtect(app)
 
     #将首页index_blue蓝图注册到app中
     from info.modules.index import index_blue

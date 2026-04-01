@@ -219,10 +219,10 @@ function logout() {
 
 
 let currentImageCodeId = null; // 保存当前验证码 ID，用于提交验证
-
+let ImageCodeId = ''
 function generateImageCode() {
-    const newId = generateUUID();
-    let url = '/passport/image_code?cur_id=' + newId;
+    ImageCodeId = generateUUID();
+    let url = '/passport/image_code?cur_id=' + ImageCodeId;
     if (currentImageCodeId) url += '&pre_id=' + currentImageCodeId;
 
     const $img = $('.get_pic_code');
@@ -231,7 +231,7 @@ function generateImageCode() {
         $img.attr('src', '/static/images/captcha_error.png');
     });
 
-    currentImageCodeId = newId; // 更新为当前 ID
+    currentImageCodeId = ImageCodeId; // 更新为当前 ID
 }
 
 
@@ -239,7 +239,7 @@ function generateImageCode() {
 function sendSMSCode() {
     // 校验参数，保证输入框有数据填写
     //移除按钮点击事件
-    $(".get_code").removeAttr("onclick");
+    $(".get_code").off("click").removeAttr("onclick");
     var mobile = $("#register_mobile").val();
     if (!mobile) {
         $("#register-mobile-err").html("请填写正确的手机号！");
@@ -260,11 +260,11 @@ function sendSMSCode() {
     var params = {
         "mobile":mobile,
         "image_code":imageCode,
-        "image_code_id":imageCodeId
+        "image_code_id":ImageCodeId
     }
 
     //发送获取短信请求
-    /*
+
     $.ajax({
         url:'/passport/sms_code',//请求地址
         type:'post',
@@ -305,7 +305,7 @@ function sendSMSCode() {
             }
         }
     })
-    */
+
 }
 
 // 调用该函数模拟点击左侧按钮

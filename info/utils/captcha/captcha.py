@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# refer to `https://bitbucket.org/akorn/wheezy.captcha`
-
 import math
 import os.path
 import random
@@ -79,9 +77,9 @@ class Captcha(object):
         """
         初始化验证码参数
         :param width: 图片宽度，默认400
-        :param height: 图片高度，默认180（增加高度避免字符被裁剪）
+        :param height: 图片高度，默认180
         :param color: 文字颜色（RGB元组），若为None则随机生成深色
-        :param text: 自定义验证码文本（若为None则随机生成）
+        :param text: 自定义验证码文本
         :param fonts: 字体文件路径列表
         """
         if text is None:

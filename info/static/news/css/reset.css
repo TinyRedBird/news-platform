@@ -1,3 +1,4 @@
+/* ========== 全局重置 ========== */
 *,
 *::before,
 *::after {
@@ -14,7 +15,7 @@ h1,
 h2,
 h3,
 h4,
-h4,
+h5,
 h6,
 dl,
 dd,
@@ -44,7 +45,7 @@ h1,
 h2,
 h3,
 h4,
-h4,
+h5,
 h6 {
     font-size: 100%;
     font-weight: normal;
@@ -77,48 +78,32 @@ img {
 .fr {
     float: right;
 }
-/*  去掉标签默认的间距   */
-body,ul,ol,p,h1,h2,h3,h4,h4,h6,dl,dd,select,input,form{
-	margin:0;
-	padding:0;
-}
-/*  去掉小圆点以及数字   */
-ul,ol{
-	list-style:none;
-}
-/* 去掉下划线 */
-a{text-decoration:none;}
 
-/* 去掉斜体 */
-em{
-	font-style:normal;
-}
-/* 让h标签继承body的文字设置 */
-h1,h2,h3,h4,h4,h6{
-	font-size:100%;
-	font-weight:normal;
-}
-/* 在IE下去掉图片做链接时生成的框线 */
-img{
-	border:0px;
+/* ========== CSS 变量 ========== */
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --text-primary: #1f2937;
+    --text-secondary: #4b5563;
+    --text-muted: #6b7280;
+    --border-light: #e5e7eb;
+    --bg-gray: #f9fafb;
+    --bg-white: #ffffff;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
 }
 
-/* 清除浮动以及清除margin-top塌陷 */
-.clearfix:before,.clearfix:after{
-	content:'';
-	display:table;
-}
-.clearfix:after{
-	clear:both;
-}
-.clearfix{
-	zoom:1;
-}
-
-.fl{
-	float:left;
-}
-
-.fr{
-	float:right;
+body {
+    background: #f3f4f6;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+        'Microsoft YaHei', sans-serif;
+    color: var(--text-primary);
+    line-height: 1.5;
+    font-size: 14px;
 }

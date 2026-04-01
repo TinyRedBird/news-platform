@@ -11,3 +11,5 @@ make-response
 alibabacloud-dypnsapi20170525
 alibabacloud-tea-util
 alibabacloud-tea-openapi
+booktype
+flask-session2
