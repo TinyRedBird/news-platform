@@ -92,23 +92,3 @@ jobs:
           path: ./allure-results
           retention-days: 7
           if-no-files-found: warn
-
-#  deploy:
-#    name: 部署到 Heroku
-#    runs-on: ubuntu-latest
-#    needs: test
-#    if: github.ref == 'refs/heads/main'   # 仅当推送到 main 分支时部署
-#
-#    steps:
-#      - name: Checkout code
-#        uses: actions/checkout@v4
-#
-#      - name: Deploy to Heroku
-#        uses: akhileshns/heroku-deploy@v3.12.14
-#        with:
-#          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-#          heroku_app_name: "your-flask-app"        # 替换为你的 Heroku 应用名
-#          heroku_email: "your-email@example.com"   # 替换为你的 Heroku 账号邮箱
-          # 可选：指定分支、构建参数等
-          # appdir: ""                             # 如果 Flask 应用在子目录中
-          # usedocker: false
